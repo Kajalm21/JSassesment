@@ -1,0 +1,34 @@
+const NFTs = [];
+
+function mintNFT(_class, _gender, _work, _time) {
+    const nft = {
+        class: _class,
+        gender: _gender,
+        work: _work,
+        time: _time  
+    };
+  
+    NFTs.push(nft);
+    console.log("Minted: " + _class);
+}
+
+function listNFTs() {
+    for (let i = 0; i < NFTs.length; i++) {
+        console.log(`\nClass: \t\t${NFTs[i].class}`);
+        console.log(`Gender: \t${NFTs[i].gender}`);
+        console.log(`Work: \t\t${NFTs[i].work}`);
+        console.log(`Time: \t\t${NFTs[i].time}`);  
+    }
+}
+
+function getTotalSupply() {
+    console.log("Total NFTs created: " + NFTs.length);
+}
+
+mintNFT("702A", "Female", "Teacher", "day");
+mintNFT("631B", "Male", "Doctor", "night");
+mintNFT("601A", "Female", "Pilot", "whole");
+mintNFT("420A", "Other", "Watchman", "day");
+
+listNFTs();
+getTotalSupply();
